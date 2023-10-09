@@ -1,0 +1,142 @@
+2023-09-14 13:47:27,374 INFO    MainThread:819 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-14 13:47:27,374 INFO    MainThread:819 [wandb_setup.py:_flush():76] Configure stats pid to 819
+2023-09-14 13:47:27,374 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /home/chengp1/.config/wandb/settings
+2023-09-14 13:47:27,374 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /notebooks/rl2023/ex1/wandb/settings
+2023-09-14 13:47:27,374 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-14 13:47:27,375 INFO    MainThread:819 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-09-14 13:47:27,375 INFO    MainThread:819 [wandb_init.py:_log_setup():524] Logging user logs to /notebooks/rl2023/ex1/wandb/run-20230914_134727-r29srn7q/logs/debug.log
+2023-09-14 13:47:27,375 INFO    MainThread:819 [wandb_init.py:_log_setup():525] Logging internal logs to /notebooks/rl2023/ex1/wandb/run-20230914_134727-r29srn7q/logs/debug-internal.log
+2023-09-14 13:47:27,375 INFO    MainThread:819 [wandb_init.py:init():564] calling init triggers
+2023-09-14 13:47:27,375 INFO    MainThread:819 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'entries': {'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}, 'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}
+2023-09-14 13:47:27,375 INFO    MainThread:819 [wandb_init.py:init():588] re-initializing run, found existing run on stack: b90enszr
+2023-09-14 13:47:27,378 INFO    MainThread:819 [wandb_run.py:_finish():1894] finishing run r-l/rl_aalto/b90enszr
+2023-09-14 13:47:27,379 INFO    MainThread:819 [jupyter.py:save_history():445] not saving jupyter history
+2023-09-14 13:47:27,379 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 13:47:27,379 INFO    MainThread:819 [wandb_init.py:_jupyter_teardown():452] cleaning up jupyter logic
+2023-09-14 13:47:27,379 INFO    MainThread:819 [wandb_run.py:_atexit_cleanup():2128] got exitcode: 0
+2023-09-14 13:47:27,379 INFO    MainThread:819 [wandb_run.py:_restore():2111] restore
+2023-09-14 13:47:27,380 INFO    MainThread:819 [wandb_run.py:_restore():2117] restore done
+2023-09-14 13:47:32,569 INFO    MainThread:819 [wandb_run.py:_footer_history_summary_info():3481] rendering history
+2023-09-14 13:47:32,570 INFO    MainThread:819 [wandb_run.py:_footer_history_summary_info():3513] rendering summary
+2023-09-14 13:47:32,578 INFO    MainThread:819 [wandb_run.py:_footer_sync_info():3440] logging synced files
+2023-09-14 13:47:32,622 INFO    MainThread:819 [wandb_init.py:init():613] starting backend
+2023-09-14 13:47:32,622 INFO    MainThread:819 [wandb_init.py:init():617] setting up manager
+2023-09-14 13:47:32,624 INFO    MainThread:819 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-09-14 13:47:32,625 INFO    MainThread:819 [wandb_init.py:init():623] backend started and connected
+2023-09-14 13:47:32,635 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1234] probe notebook
+2023-09-14 13:47:32,636 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1244] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-09-14 13:47:32,636 INFO    MainThread:819 [wandb_init.py:init():714] updated telemetry
+2023-09-14 13:47:32,636 INFO    MainThread:819 [wandb_init.py:init():747] communicating run to backend with 60.0 second timeout
+2023-09-14 13:47:34,031 INFO    MainThread:819 [wandb_run.py:_on_init():2180] communicating current version
+2023-09-14 13:47:34,078 INFO    MainThread:819 [wandb_run.py:_on_init():2189] got version response upgrade_message: "wandb version 0.15.10 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-09-14 13:47:34,078 INFO    MainThread:819 [wandb_init.py:init():798] starting run threads in backend
+2023-09-14 13:47:34,973 WARNING MainThread:819 [wandb_init.py:init():1186] interrupted
+Traceback (most recent call last):
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1164, in init
+    run = wi.init()
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 809, in init
+    run_start_result = run_start_handle.wait(timeout=30)
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+  File "/opt/software/lib/python3.10/threading.py", line 607, in wait
+    signaled = self._cond.wait(timeout)
+  File "/opt/software/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+2023-09-14 15:10:55,572 INFO    MainThread:819 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-14 15:10:55,572 INFO    MainThread:819 [wandb_setup.py:_flush():76] Configure stats pid to 819
+2023-09-14 15:10:55,573 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /home/chengp1/.config/wandb/settings
+2023-09-14 15:10:55,573 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /notebooks/rl2023/ex1/wandb/settings
+2023-09-14 15:10:55,573 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-14 15:10:55,573 INFO    MainThread:819 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-09-14 15:10:55,573 INFO    MainThread:819 [wandb_init.py:_log_setup():524] Logging user logs to /notebooks/rl2023/ex1/wandb/run-20230914_151055-ntraj93c/logs/debug.log
+2023-09-14 15:10:55,573 INFO    MainThread:819 [wandb_init.py:_log_setup():525] Logging internal logs to /notebooks/rl2023/ex1/wandb/run-20230914_151055-ntraj93c/logs/debug-internal.log
+2023-09-14 15:10:55,573 INFO    MainThread:819 [wandb_init.py:_jupyter_setup():470] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fc2e244ada0>
+2023-09-14 15:10:55,574 INFO    MainThread:819 [wandb_init.py:init():564] calling init triggers
+2023-09-14 15:10:55,574 INFO    MainThread:819 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'entries': {'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}, 'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}
+2023-09-14 15:10:55,574 INFO    MainThread:819 [wandb_init.py:init():613] starting backend
+2023-09-14 15:10:55,574 INFO    MainThread:819 [wandb_init.py:init():617] setting up manager
+2023-09-14 15:10:55,577 INFO    MainThread:819 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-09-14 15:10:55,577 INFO    MainThread:819 [wandb_init.py:init():623] backend started and connected
+2023-09-14 15:10:55,590 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1234] probe notebook
+2023-09-14 15:10:55,590 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1244] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-09-14 15:10:55,590 INFO    MainThread:819 [wandb_init.py:init():714] updated telemetry
+2023-09-14 15:10:55,591 INFO    MainThread:819 [wandb_init.py:init():747] communicating run to backend with 60.0 second timeout
+2023-09-14 15:11:55,636 ERROR   MainThread:819 [wandb_init.py:init():773] encountered error: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-09-14 15:11:55,746 ERROR   MainThread:819 [wandb_init.py:init():1182] Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1164, in init
+    run = wi.init()
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 779, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-09-14 15:13:30,528 INFO    MainThread:819 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-14 15:13:30,529 INFO    MainThread:819 [wandb_setup.py:_flush():76] Configure stats pid to 819
+2023-09-14 15:13:30,529 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /home/chengp1/.config/wandb/settings
+2023-09-14 15:13:30,530 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /notebooks/rl2023/ex1/wandb/settings
+2023-09-14 15:13:30,530 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-14 15:13:30,530 INFO    MainThread:819 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-09-14 15:13:30,530 INFO    MainThread:819 [wandb_init.py:_log_setup():524] Logging user logs to /notebooks/rl2023/ex1/wandb/run-20230914_151330-3bbpqai9/logs/debug.log
+2023-09-14 15:13:30,530 INFO    MainThread:819 [wandb_init.py:_log_setup():525] Logging internal logs to /notebooks/rl2023/ex1/wandb/run-20230914_151330-3bbpqai9/logs/debug-internal.log
+2023-09-14 15:13:30,530 INFO    MainThread:819 [wandb_init.py:init():564] calling init triggers
+2023-09-14 15:13:30,530 INFO    MainThread:819 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'entries': {'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}, 'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}
+2023-09-14 15:13:30,531 INFO    MainThread:819 [wandb_init.py:init():613] starting backend
+2023-09-14 15:13:30,531 INFO    MainThread:819 [wandb_init.py:init():617] setting up manager
+2023-09-14 15:13:30,533 INFO    MainThread:819 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-09-14 15:13:30,534 INFO    MainThread:819 [wandb_init.py:init():623] backend started and connected
+2023-09-14 15:13:30,544 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1234] probe notebook
+2023-09-14 15:13:30,544 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1244] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-09-14 15:13:30,544 INFO    MainThread:819 [wandb_init.py:init():714] updated telemetry
+2023-09-14 15:13:30,545 INFO    MainThread:819 [wandb_init.py:init():747] communicating run to backend with 60.0 second timeout
+2023-09-14 15:14:30,588 ERROR   MainThread:819 [wandb_init.py:init():773] encountered error: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-09-14 15:14:30,627 ERROR   MainThread:819 [wandb_init.py:init():1182] Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1164, in init
+    run = wi.init()
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 779, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-09-14 15:15:52,442 INFO    MainThread:819 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-14 15:15:52,445 INFO    MainThread:819 [wandb_setup.py:_flush():76] Configure stats pid to 819
+2023-09-14 15:15:52,445 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /home/chengp1/.config/wandb/settings
+2023-09-14 15:15:52,445 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /notebooks/rl2023/ex1/wandb/settings
+2023-09-14 15:15:52,445 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-14 15:15:52,445 INFO    MainThread:819 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-09-14 15:15:52,446 INFO    MainThread:819 [wandb_init.py:_log_setup():524] Logging user logs to /notebooks/rl2023/ex1/wandb/run-20230914_151552-br3q27zb/logs/debug.log
+2023-09-14 15:15:52,446 INFO    MainThread:819 [wandb_init.py:_log_setup():525] Logging internal logs to /notebooks/rl2023/ex1/wandb/run-20230914_151552-br3q27zb/logs/debug-internal.log
+2023-09-14 15:15:52,446 INFO    MainThread:819 [wandb_init.py:init():564] calling init triggers
+2023-09-14 15:15:52,446 INFO    MainThread:819 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'entries': {'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}, 'exp_name': 'ex1', 'seed': None, 'env_name': 'TargetReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}
+2023-09-14 15:15:52,446 INFO    MainThread:819 [wandb_init.py:init():613] starting backend
+2023-09-14 15:15:52,446 INFO    MainThread:819 [wandb_init.py:init():617] setting up manager
+2023-09-14 15:15:52,449 INFO    MainThread:819 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-09-14 15:15:52,449 INFO    MainThread:819 [wandb_init.py:init():623] backend started and connected
+2023-09-14 15:15:52,460 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1234] probe notebook
+2023-09-14 15:15:52,460 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1244] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-09-14 15:15:52,460 INFO    MainThread:819 [wandb_init.py:init():714] updated telemetry
+2023-09-14 15:15:52,461 INFO    MainThread:819 [wandb_init.py:init():747] communicating run to backend with 60.0 second timeout
+2023-09-14 15:16:52,504 ERROR   MainThread:819 [wandb_init.py:init():773] encountered error: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-09-14 15:16:52,543 ERROR   MainThread:819 [wandb_init.py:init():1182] Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1164, in init
+    run = wi.init()
+  File "/opt/software/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 779, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-

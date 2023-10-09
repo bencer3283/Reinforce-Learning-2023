@@ -1,0 +1,77 @@
+2023-09-14 11:15:03,892 INFO    MainThread:819 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-14 11:15:03,893 INFO    MainThread:819 [wandb_setup.py:_flush():76] Configure stats pid to 819
+2023-09-14 11:15:03,893 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /home/chengp1/.config/wandb/settings
+2023-09-14 11:15:03,893 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /notebooks/rl2023/ex1/wandb/settings
+2023-09-14 11:15:03,893 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-14 11:15:03,893 INFO    MainThread:819 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-09-14 11:15:03,893 INFO    MainThread:819 [wandb_init.py:_log_setup():524] Logging user logs to /notebooks/rl2023/ex1/wandb/run-20230914_111503-ril7lgau/logs/debug.log
+2023-09-14 11:15:03,893 INFO    MainThread:819 [wandb_init.py:_log_setup():525] Logging internal logs to /notebooks/rl2023/ex1/wandb/run-20230914_111503-ril7lgau/logs/debug-internal.log
+2023-09-14 11:15:03,894 INFO    MainThread:819 [wandb_init.py:_jupyter_setup():470] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fc318429c90>
+2023-09-14 11:15:03,894 INFO    MainThread:819 [wandb_init.py:init():564] calling init triggers
+2023-09-14 11:15:03,894 INFO    MainThread:819 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'entries': {'exp_name': 'ex1', 'seed': None, 'env_name': 'SpinningReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}, 'exp_name': 'ex1', 'seed': None, 'env_name': 'SpinningReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}
+2023-09-14 11:15:03,894 INFO    MainThread:819 [wandb_init.py:init():588] re-initializing run, found existing run on stack: 98myc4kd
+2023-09-14 11:15:03,897 INFO    MainThread:819 [wandb_run.py:_finish():1894] finishing run r-l/rl_aalto/98myc4kd
+2023-09-14 11:15:03,897 INFO    MainThread:819 [wandb_run.py:_atexit_cleanup():2128] got exitcode: 0
+2023-09-14 11:15:03,898 INFO    MainThread:819 [wandb_run.py:_restore():2111] restore
+2023-09-14 11:15:03,898 INFO    MainThread:819 [wandb_run.py:_restore():2117] restore done
+2023-09-14 11:15:09,023 INFO    MainThread:819 [wandb_run.py:_footer_history_summary_info():3481] rendering history
+2023-09-14 11:15:09,024 INFO    MainThread:819 [wandb_run.py:_footer_history_summary_info():3513] rendering summary
+2023-09-14 11:15:09,032 INFO    MainThread:819 [wandb_run.py:_footer_sync_info():3440] logging synced files
+2023-09-14 11:15:09,145 INFO    MainThread:819 [wandb_init.py:init():613] starting backend
+2023-09-14 11:15:09,146 INFO    MainThread:819 [wandb_init.py:init():617] setting up manager
+2023-09-14 11:15:09,148 INFO    MainThread:819 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-09-14 11:15:09,149 INFO    MainThread:819 [wandb_init.py:init():623] backend started and connected
+2023-09-14 11:15:09,160 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1234] probe notebook
+2023-09-14 11:15:09,160 INFO    MainThread:819 [wandb_run.py:_label_probe_notebook():1244] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-09-14 11:15:09,160 INFO    MainThread:819 [wandb_init.py:init():714] updated telemetry
+2023-09-14 11:15:09,161 INFO    MainThread:819 [wandb_init.py:init():747] communicating run to backend with 60.0 second timeout
+2023-09-14 11:15:10,555 INFO    MainThread:819 [wandb_run.py:_on_init():2180] communicating current version
+2023-09-14 11:15:10,605 INFO    MainThread:819 [wandb_run.py:_on_init():2189] got version response upgrade_message: "wandb version 0.15.10 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-09-14 11:15:10,605 INFO    MainThread:819 [wandb_init.py:init():798] starting run threads in backend
+2023-09-14 11:15:40,639 INFO    MainThread:819 [wandb_run.py:_console_start():2159] atexit reg
+2023-09-14 11:15:40,639 INFO    MainThread:819 [wandb_run.py:_redirect():2014] redirect: wrap_raw
+2023-09-14 11:15:40,639 INFO    MainThread:819 [wandb_run.py:_redirect():2079] Wrapping output streams.
+2023-09-14 11:15:40,639 INFO    MainThread:819 [wandb_run.py:_redirect():2104] Redirects installed.
+2023-09-14 11:15:40,640 INFO    MainThread:819 [wandb_init.py:init():839] run started, returning control to user process
+2023-09-14 11:19:34,408 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 11:19:34,415 INFO    MainThread:819 [wandb_init.py:_pause_backend():435] pausing backend
+2023-09-14 11:19:34,426 INFO    MainThread:819 [wandb_init.py:_resume_backend():440] resuming backend
+2023-09-14 11:19:53,144 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 11:19:53,145 INFO    MainThread:819 [wandb_init.py:_pause_backend():435] pausing backend
+2023-09-14 11:20:04,156 INFO    MainThread:819 [wandb_init.py:_resume_backend():440] resuming backend
+2023-09-14 11:20:04,194 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 11:20:04,194 INFO    MainThread:819 [wandb_init.py:_pause_backend():435] pausing backend
+2023-09-14 11:20:23,979 INFO    MainThread:819 [wandb_init.py:_resume_backend():440] resuming backend
+2023-09-14 11:20:23,988 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 11:20:23,988 INFO    MainThread:819 [wandb_init.py:_pause_backend():435] pausing backend
+2023-09-14 11:20:31,734 INFO    MainThread:819 [wandb_init.py:_resume_backend():440] resuming backend
+2023-09-14 11:20:31,741 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 11:20:31,741 INFO    MainThread:819 [wandb_init.py:_pause_backend():435] pausing backend
+2023-09-14 11:20:55,261 INFO    MainThread:819 [wandb_init.py:_resume_backend():440] resuming backend
+2023-09-14 11:20:55,267 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 11:20:55,268 INFO    MainThread:819 [wandb_init.py:_pause_backend():435] pausing backend
+2023-09-14 11:21:00,184 INFO    MainThread:819 [wandb_init.py:_resume_backend():440] resuming backend
+2023-09-14 11:21:00,240 INFO    MainThread:819 [wandb_setup.py:_flush():76] Current SDK version is 0.15.9
+2023-09-14 11:21:00,240 INFO    MainThread:819 [wandb_setup.py:_flush():76] Configure stats pid to 819
+2023-09-14 11:21:00,240 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /home/chengp1/.config/wandb/settings
+2023-09-14 11:21:00,240 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from /notebooks/rl2023/ex1/wandb/settings
+2023-09-14 11:21:00,240 INFO    MainThread:819 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-09-14 11:21:00,240 INFO    MainThread:819 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-09-14 11:21:00,240 INFO    MainThread:819 [wandb_init.py:_log_setup():524] Logging user logs to /notebooks/rl2023/ex1/wandb/run-20230914_112100-xbv9zpx6/logs/debug.log
+2023-09-14 11:21:00,241 INFO    MainThread:819 [wandb_init.py:_log_setup():525] Logging internal logs to /notebooks/rl2023/ex1/wandb/run-20230914_112100-xbv9zpx6/logs/debug-internal.log
+2023-09-14 11:21:00,241 INFO    MainThread:819 [wandb_init.py:init():564] calling init triggers
+2023-09-14 11:21:00,241 INFO    MainThread:819 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'entries': {'exp_name': 'ex1', 'seed': None, 'env_name': 'SpinningReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}, 'exp_name': 'ex1', 'seed': None, 'env_name': 'SpinningReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}
+2023-09-14 11:21:00,241 INFO    MainThread:819 [wandb_init.py:init():588] re-initializing run, found existing run on stack: ril7lgau
+2023-09-14 11:21:00,244 INFO    MainThread:819 [wandb_run.py:_finish():1894] finishing run r-l/rl_aalto/ril7lgau
+2023-09-14 11:21:00,244 INFO    MainThread:819 [jupyter.py:save_history():445] not saving jupyter history
+2023-09-14 11:21:00,244 INFO    MainThread:819 [jupyter.py:save_ipynb():373] not saving jupyter notebook
+2023-09-14 11:21:00,244 INFO    MainThread:819 [wandb_init.py:_jupyter_teardown():452] cleaning up jupyter logic
+2023-09-14 11:21:00,245 INFO    MainThread:819 [wandb_run.py:_atexit_cleanup():2128] got exitcode: 0
+2023-09-14 11:21:00,245 INFO    MainThread:819 [wandb_run.py:_restore():2111] restore
+2023-09-14 11:21:00,245 INFO    MainThread:819 [wandb_run.py:_restore():2117] restore done
+2023-09-14 11:21:06,409 INFO    MainThread:819 [wandb_run.py:_footer_history_summary_info():3481] rendering history
+2023-09-14 11:21:06,411 INFO    MainThread:819 [wandb_run.py:_footer_history_summary_info():3513] rendering summary
+2023-09-14 11:21:06,420 INFO    MainThread:819 [wandb_run.py:_footer_sync_info():3440] logging synced files

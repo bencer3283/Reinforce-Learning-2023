@@ -1,0 +1,28 @@
+Configuration Settings: {'exp_name': 'ex1', 'seed': None, 'env_name': 'SpinningReacher-v0', 'max_episode_steps': 200, 'train_episodes': 200, 'batch_size': 64, 'min_update_samples': 2000, 'testing': False, 'model_path': 'default', 'save_video': True, 'save_model': True, 'save_logging': True, 'silent': False, 'use_wandb': True, 'run_suffix': 0}
+Training device: cpu
+Observation space dimensions: 2
+Action space dimensions: 5
+Episode 0 finished. Total reward: -122 (200 timesteps)
+Episode 1 finished. Total reward: -122 (200 timesteps)
+Episode 2 finished. Total reward: -94 (200 timesteps)
+Episode 3 finished. Total reward: -98 (200 timesteps)
+Episode 4 finished. Total reward: -122 (200 timesteps)
+Episode 5 finished. Total reward: -108 (200 timesteps)
+Episode 6 finished. Total reward: -112 (200 timesteps)
+Episode 7 finished. Total reward: -124 (200 timesteps)
+Episode 8 finished. Total reward: -116 (200 timesteps)
+Episode 9 finished. Total reward: -98 (200 timesteps)
+Updating the policy...
+Updating finished!
+Episode 10 finished. Total reward: -122 (200 timesteps)
+Episode 11 finished. Total reward: -82 (174 timesteps)
+Episode 12 finished. Total reward: -116 (200 timesteps)
+Episode 13 finished. Total reward: -68 (200 timesteps)
+Episode 14 finished. Total reward: -94 (200 timesteps)
+Episode 15 finished. Total reward: -80 (200 timesteps)
+Episode 16 finished. Total reward: -102 (200 timesteps)
+Episode 17 finished. Total reward: -112 (200 timesteps)
+Episode 18 finished. Total reward: -114 (200 timesteps)
+Episode 19 finished. Total reward: -90 (200 timesteps)
+Updating the policy...
+Numpy/Torch/Random Seed:  880
