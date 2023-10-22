@@ -2,3 +2,4 @@ id_ed25519.pub
 id_ed25519
 id_ed25519-checkpoint
 in_ed25519-checkpoint.pub
+**/*.pub
