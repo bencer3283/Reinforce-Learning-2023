@@ -90,7 +90,7 @@ class PPOAgent(BaseAgent):
             indices = [i for i in indices if i not in batch_indices]
 
     def ppo_update(self, states, actions, rewards, next_states, dones, old_log_probs, targets):
-        action_dists, values = self.policy(states) # forward()?
+        action_dists, values = self.policy(states)
         values = values.squeeze()
         new_action_probs = action_dists.log_prob(actions)
         ratio = torch.exp(new_action_probs - old_log_probs)
@@ -105,8 +105,8 @@ class PPOAgent(BaseAgent):
         value_loss = F.smooth_l1_loss(values, targets, reduction="mean")
 
         policy_objective = policy_objective.mean()
-        entropy = action_dists.entropy().mean()
-        loss = policy_objective + 0.5*value_loss - 0.01*entropy
+        # entropy = action_dists.entropy().mean()
+        loss = policy_objective + 0.5*value_loss # - 0.01*entropy
 
         self.optimizer.zero_grad()
         loss.backward()
@@ -143,7 +143,7 @@ class PPOAgent(BaseAgent):
                 num_updates += 1
 
                 # Update policy randomness
-                self.policy.set_logstd_ratio(ratio_of_episodes)
+                # self.policy.set_logstd_ratio(ratio_of_episodes)
 
         # Return stats of training
         update_info = {'episode_length': episode_length,

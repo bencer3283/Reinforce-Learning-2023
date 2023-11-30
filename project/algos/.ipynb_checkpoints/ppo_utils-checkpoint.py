@@ -9,7 +9,7 @@ class Policy(torch.nn.Module):
         self.state_space = state_space
         self.action_space = action_space
         self.env = env
-        self.actor_logstd = 1
+        self.actor_logstd = 0
        
         self.fc1_a = torch.nn.Linear(state_space, hidden_size)
         self.fc2_a = torch.nn.Linear(hidden_size, hidden_size)
