@@ -10,6 +10,7 @@ import numpy as np
 from gymnasium import core, spaces
 import pygame
 from pygame import gfxdraw
+import torch
 
 
 
@@ -277,7 +278,7 @@ class SandingEnv(core.Env):
 
     def step(self, a):
         try:
-            a = a.numpy()
+            a = torch.Tensor.cpu(a).numpy()
         except:
             a = np.array(a)
         a = self.MAX_SIZE * a

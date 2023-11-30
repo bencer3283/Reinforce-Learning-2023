@@ -14,14 +14,14 @@ class PPOExtension(PPOAgent):
         action_dists, values = self.policy(states)
         values = values.squeeze()
         new_action_probs = action_dists.log_prob(actions)
-        ratio = torch.exp(new_action_probs - old_log_probs)
-        clipped_ratio = torch.clamp(ratio, 1-self.clip, 1+self.clip)
+        ratio = torch.exp(new_action_probs - old_log_probs).to(self.device)
+        clipped_ratio = torch.clamp(ratio, 1-self.clip, 1+self.clip).to(self.device)
 
         advantages = targets - values
         advantages -= advantages.mean()
         advantages /= advantages.std()+1e-8
         advantages = advantages.detach()
-        policy_objective = -torch.min(ratio*advantages, clipped_ratio*advantages)
+        policy_objective = -torch.min(ratio*advantages, clipped_ratio*advantages).to(self.device)
 
         value_loss = F.smooth_l1_loss(values, targets, reduction="mean")
 

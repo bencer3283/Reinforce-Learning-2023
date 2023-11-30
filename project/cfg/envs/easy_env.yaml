@@ -18,7 +18,7 @@ silent: false
 log_interval: 2000
 
 run_suffix: 0
-device: cpu
+device: cuda
 
 env_config:
   n_sanding: 1

@@ -26,6 +26,8 @@ class PPOAgent(BaseAgent):
         self.dones = []
         self.action_log_probs = []
         self.silent = self.cfg.silent
+
+        torch.set_default_device('cuda')
     
     def update_policy(self):
         if not self.silent:
@@ -35,12 +37,12 @@ class PPOAgent(BaseAgent):
         #print(self.actions)
         #print(self.states[0].size(), "\n", self.actions[0].size())
 
-        self.states = torch.stack(self.states)
-        self.actions = torch.stack(self.actions)
-        self.next_states = torch.stack(self.next_states)
-        self.rewards = torch.stack(self.rewards).squeeze()
-        self.dones = torch.stack(self.dones).squeeze()
-        self.action_log_probs = torch.stack(self.action_log_probs).squeeze()
+        self.states = torch.stack(self.states).to(self.device)
+        self.actions = torch.stack(self.actions).to(self.device)
+        self.next_states = torch.stack(self.next_states).to(self.device)
+        self.rewards = torch.stack(self.rewards).squeeze().to(self.device)
+        self.dones = torch.stack(self.dones).squeeze().to(self.device)
+        self.action_log_probs = torch.stack(self.action_log_probs).squeeze().to(self.device)
 
         for e in range(self.epochs):
             self.ppo_epoch()
@@ -62,7 +64,7 @@ class PPOAgent(BaseAgent):
             _, next_values = self.policy(self.next_states) # forward()?
             values = values.squeeze()
             next_values = next_values.squeeze()
-        gaes = torch.zeros(1)
+        gaes = torch.zeros(1).to(self.device)
         timesteps = len(self.rewards)
         for t in range(timesteps-1, -1, -1):
             deltas = self.rewards[t] + self.gamma * next_values[t] *\
@@ -70,7 +72,7 @@ class PPOAgent(BaseAgent):
             gaes = deltas + self.gamma*self.tau*(1-self.dones[t])*gaes
             returns.append(gaes + values[t])
 
-        return torch.Tensor(list(reversed(returns)))
+        return torch.Tensor(list(reversed(returns))).to(self.device)
 
     def ppo_epoch(self):
         indices = list(range(len(self.states)))
@@ -93,14 +95,14 @@ class PPOAgent(BaseAgent):
         action_dists, values = self.policy(states)
         values = values.squeeze()
         new_action_probs = action_dists.log_prob(actions)
-        ratio = torch.exp(new_action_probs - old_log_probs)
-        clipped_ratio = torch.clamp(ratio, 1-self.clip, 1+self.clip)
+        ratio = torch.exp(new_action_probs - old_log_probs).to(self.device)
+        clipped_ratio = torch.clamp(ratio, 1-self.clip, 1+self.clip).to(self.device)
 
         advantages = targets - values
         advantages -= advantages.mean()
         advantages /= advantages.std()+1e-8
         advantages = advantages.detach()
-        policy_objective = -torch.min(ratio*advantages, clipped_ratio*advantages)
+        policy_objective = -torch.min(ratio*advantages, clipped_ratio*advantages).to(self.device)
 
         value_loss = F.smooth_l1_loss(values, targets, reduction="mean")
 
@@ -209,12 +211,12 @@ class PPOAgent(BaseAgent):
 
   
     def store_outcome(self, state, action, next_state, reward, action_log_prob, done):
-        self.states.append(torch.from_numpy(state).float())
+        self.states.append(torch.from_numpy(state).float().to(self.device))
         self.actions.append(action)
         self.action_log_probs.append(action_log_prob.detach())
-        self.rewards.append(torch.Tensor([reward]).float())
-        self.dones.append(torch.Tensor([done]))
-        self.next_states.append(torch.from_numpy(next_state).float())
+        self.rewards.append(torch.Tensor([reward]).float().to(self.device))
+        self.dones.append(torch.Tensor([done]).to(self.device))
+        self.next_states.append(torch.from_numpy(next_state).float().to(self.device))
     
     def load_model(self):
         filepath=str(self.model_dir)+'/model_parameters_'+str(self.seed)+'.pt'
