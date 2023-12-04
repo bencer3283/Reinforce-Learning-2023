@@ -1,3 +1,10 @@
+# Extensions implemented:
+#     1. decreasing noise variance: line 86
+#     2. decreasing entropy bonus in loss: line 49
+#     3. clipped gradient: line 53
+#     4. reward scaling: line 25
+#     5. increase variance multiplier: line 27 
+
 from .agent_base import BaseAgent
 from .ppo_utils import Policy
 from .ppo_agent import PPOAgent
@@ -7,8 +14,17 @@ import torch
 import numpy as np
 import torch.nn.functional as F
 import time
+import gymnasium as gym
 
 class PPOExtension(PPOAgent):
+    def __init__(self, config=None):
+        super(PPOExtension, self).__init__(config)
+        self.env=config["env"]
+        # self.env = gym.wrappers.NormalizeObservation(self.env)
+        # self.env = gym.wrappers.TransformObservation(self.env, lambda reward: np.clip(reward, -10, 10))
+        self.env = gym.wrappers.NormalizeReward(self.env)
+        # self.env = gym.wrappers.TransformReward(self.env, lambda reward: np.clip(reward, -10, 10))
+        self.policy.set_variance_multiplier(0.3)
     
     def ppo_update(self, states, actions, rewards, next_states, dones, old_log_probs, targets):
         action_dists, values = self.policy(states)
@@ -27,10 +43,11 @@ class PPOExtension(PPOAgent):
 
         policy_objective = policy_objective.mean()
         entropy = action_dists.entropy().mean()
-        loss = policy_objective + 0.5*value_loss - 0.01*entropy
+        loss = policy_objective + 0.5*value_loss - 0.002 * self.policy.actor_logstd * entropy # decreasing entropy bonus
 
         self.optimizer.zero_grad()
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(self.policy.parameters(), 0.5) # clip gradient norm 
         self.optimizer.step()
     
     def train_iteration(self,ratio_of_episodes):
@@ -63,7 +80,7 @@ class PPOExtension(PPOAgent):
                 num_updates += 1
 
                 # Update policy randomness
-                self.policy.set_logstd_ratio(ratio_of_episodes)
+                self.policy.set_logstd_ratio(ratio_of_episodes) # decreasing noise variance
 
         # Return stats of training
         update_info = {'episode_length': episode_length,

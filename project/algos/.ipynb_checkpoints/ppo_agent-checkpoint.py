@@ -105,8 +105,8 @@ class PPOAgent(BaseAgent):
         value_loss = F.smooth_l1_loss(values, targets, reduction="mean")
 
         policy_objective = policy_objective.mean()
-        # entropy = action_dists.entropy().mean()
-        loss = policy_objective + 0.5*value_loss # - 0.01*entropy
+        entropy = action_dists.entropy().mean()
+        loss = policy_objective + 0.5*value_loss - 0.001*entropy
 
         self.optimizer.zero_grad()
         loss.backward()
@@ -143,7 +143,7 @@ class PPOAgent(BaseAgent):
                 num_updates += 1
 
                 # Update policy randomness
-                # self.policy.set_logstd_ratio(ratio_of_episodes)
+                self.policy.set_logstd_ratio(ratio_of_episodes)
 
         # Return stats of training
         update_info = {'episode_length': episode_length,

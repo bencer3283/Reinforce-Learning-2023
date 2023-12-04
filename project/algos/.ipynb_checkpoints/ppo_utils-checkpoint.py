@@ -9,7 +9,7 @@ class Policy(torch.nn.Module):
         self.state_space = state_space
         self.action_space = action_space
         self.env = env
-        self.actor_logstd = 0
+        self.actor_logstd = 1
        
         self.fc1_a = torch.nn.Linear(state_space, hidden_size)
         self.fc2_a = torch.nn.Linear(hidden_size, hidden_size)
@@ -44,6 +44,6 @@ class Policy(torch.nn.Module):
         x_c = self.fc3_c(x_c)
 
         action_mean = torch.tanh(x_a)
-        action_dist = MultivariateNormal(action_mean, scale_tril=torch.diag(0.2 * np.exp(self.actor_logstd) * torch.ones(self.action_space)))
+        action_dist = MultivariateNormal(action_mean, scale_tril=torch.diag(0.15 * np.exp(self.actor_logstd) * torch.ones(self.action_space)))
 
         return action_dist, x_c
